@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notícias • Início</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <button id="themeToggle">Alternar Tema</button>
+    </header>
+  <header class="app-header">
+    <div class="header-row">
+      <a class="logo" href="index.html" aria-label="Página inicial">📰 Notícias</a>
+      <div class="search-wrapper">
+        <input id="searchInput" type="search" placeholder="Buscar notícias..." aria-label="Buscar" />
+      </div>
+      <div class="filter">
+        <button id="filterBtn" class="btn btn-outline" aria-expanded="false" aria-controls="filterMenu">
+          Filtros ▾
+        </button>
+        <div id="filterMenu" class="dropdown" role="menu" aria-hidden="true"></div>
+      </div>
+      <a class="btn btn-ghost admin-link" href="admin.html" aria-label="Área administrativa">Admin</a>
+    </div>
+  </header>
+
+  <main class="container" id="newsRoot" tabindex="-1" aria-live="polite"></main>
+
+  <footer class="app-footer">
+    <DIv>BLOG</DIv>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.NewsApp.initIndex();
+    });
+  </script>
+</body>
+</html>

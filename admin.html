@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <button id="themeToggle">Alternar Tema</button>
+    </header>
+
+    <main id="loginSection">
+        <h2>Login Administrativo</h2>
+        <form id="loginForm">
+            <label for="user">Usuário:</label>
+            <input type="text" id="user" required>
+            <label for="pass">Senha:</label>
+            <input type="password" id="pass" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="loginError" class="error"></p>
+    </main>
+
+    <main id="adminPanel" style="display:none;">
+        <h2>Painel Administrativo</h2>
+        <nav>
+            <a href="adicionar.html">Adicionar Notícia</a>
+        </nav>
+        <div id="listaNoticiasAdmin"></div>
+    </main>
+</body>
+</html>

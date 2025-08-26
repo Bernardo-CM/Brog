@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adicionar Notícia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-row">
+      <a class="logo" href="index.html">📰 Notícias</a>
+      <h1 class="page-title">Adicionar notícia</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="newsForm" class="card" novalidate>
+      <fieldset>
+        <legend>Dados da notícia</legend>
+
+        <label for="title">Título</label>
+        <input id="title" name="title" type="text" required maxlength="160" placeholder="Ex.: Lançamento de foguete..." />
+
+        <label for="summary">Resumo</label>
+        <input id="summary" name="summary" type="text" required maxlength="200" placeholder="Texto curto resumindo a notícia" />
+
+        <label for="content">Conteúdo completo</label>
+        <textarea id="content" name="content" required rows="6" placeholder="Texto da notícia..."></textarea>
+
+        <label for="category">Categoria</label>
+        <select id="category" name="category" required></select>
+
+        <label for="image">Imagem (upload)</label>
+        <input id="image" name="image" type="file" accept="image/*" required />
+        <div class="preview"><img id="imgPreview" alt="Prévia da imagem selecionada" /></div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <a class="btn btn-secondary" href="index.html">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.NewsApp.initAddPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Notícias</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-row">
+      <a class="logo" href="index.html">📰 Notícias</a>
+      <h1 class="page-title">Editar notícias</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="listTitle">
+      <h2 id="listTitle">Todas as notícias</h2>
+      <div id="editList" class="list"></div>
+    </section>
+
+    <section class="card" aria-labelledby="editTitle">
+      <h2 id="editTitle">Editar notícia selecionada</h2>
+      <form id="editForm" novalidate>
+        <input type="hidden" id="editId" />
+        <label for="editTitleInput">Título</label>
+        <input id="editTitleInput" type="text" required maxlength="160" />
+
+        <label for="editSummary">Resumo</label>
+        <input id="editSummary" type="text" required maxlength="200" />
+
+        <label for="editContent">Conteúdo completo</label>
+        <textarea id="editContent" rows="6" required></textarea>
+
+        <label for="editCategory">Categoria</label>
+        <select id="editCategory" required></select>
+
+        <label for="editImage">Imagem (trocar)</label>
+        <input id="editImage" type="file" accept="image/*" />
+        <div class="preview"><img id="editImgPreview" alt="Prévia da imagem" /></div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Salvar alterações</button>
+          <button class="btn btn-outline" type="button" id="cancelEdit">Cancelar</button>
+          <a class="btn btn-secondary" href="index.html">Voltar</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.NewsApp.initEditPage();
+    });
+  </script>
+</body>
+</html>
